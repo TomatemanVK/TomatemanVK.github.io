@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Bomb Survey | Tomate Store</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ff6347;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid #8b0000;
+        }
+        nav {
+            background-color: #8b0000;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav li {
+            margin: 0 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: white;
+            margin-top: 0;
+        }
+        h2 {
+            color: #8b0000;
+            border-bottom: 2px solid #ff6347;
+            padding-bottom: 10px;
+        }
+        .flash-bomb-img {
+            width: 150px;
+            margin: 20px 0;
+            border: 2px solid #8b0000;
+            border-radius: 8px;
+        }
+        .btn {
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+            min-width: 120px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #e55337;
+        }
+        .btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        .btn-group {
+            margin: 30px 0;
+        }
+        #thankYou {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0fff0;
+            border: 1px solid #a0d8a0;
+            border-radius: 4px;
+            color: #006400;
+            font-weight: bold;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tomate Store</h1>
+        <p>Pirate King Online Items</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="survey.html">Survey</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Flash Bomb Interest Survey</h2>
+        <img src="flashBomb.png" alt="Flash Bomb">
+        <p>Would you be interested in buying Flash Bombs from our store?</p>
+        
+        <div class="btn-group">
+            <button class="btn" onclick="submitResponse('Yes')">Yes, I want it!</button>
+            <button class="btn" onclick="submitResponse('No')">No thanks</button>
+        </div>
+        
+        <div id="thankYou">
+            Thank you for your feedback! We'll notify you if we stock Flash Bombs.
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Tomate Store. Pirate King Online items.</p>
+    </footer>
+
+    <script>
+    function submitResponse(answer) {
+        // Replace these with your actual form IDs
+        const formId = "1FAIpQLSdyM6WSgjzJBNtuNHaXGf3O8Dxx-P5nWbzWqaSuq9MqMyT-9Q"; // From your form URL
+        const fieldId = "entry.1968880516"; // From page source inspection
+        
+        // Create hidden iframe for submission
+        const iframe = document.createElement("iframe");
+        iframe.style.display = "none";
+        document.body.appendChild(iframe);
+        
+        // Build submission URL
+        const url = new URL(`https://docs.google.com/forms/d/e/${formId}/formResponse`);
+        url.searchParams.append(fieldId, answer);
+        url.searchParams.append("submit", "Submit");
+        
+        // Submit the form
+        iframe.src = url.toString();
+        
+        // Show confirmation
+        document.getElementById('thankYou').style.display = 'block';
+        
+        // Disable buttons to prevent duplicate submissions
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.disabled = true;
+        });
+        
+        // Remove iframe after submission
+        setTimeout(() => iframe.remove(), 3000);
+    }
+    </script>
+</body>
+</html>
