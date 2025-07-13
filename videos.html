@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pirate King Videos | Tomate Store</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ff6347;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid #8b0000;
+        }
+        nav {
+            background-color: #8b0000;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav li {
+            margin: 0 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .video-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .video-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .video-info {
+            text-align: center;
+            padding: 15px;
+        }
+        .video-info h3 {
+            color: #8b0000;
+            margin-top: 0;
+        }
+        .channel-cta {
+            text-align: center;
+            margin: 50px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+        }
+        .subscribe-btn {
+            display: inline-block;
+            background: #ff0000;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+        .subscribe-btn:hover {
+            background: #cc0000;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+        @media (max-width: 600px) {
+            .video-section {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tomate Store Videos</h1>
+        <p>Pirate King Online gameplay, tutorials and more!</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="survey.html">Survey</a></li>
+            <li><a href="videos.html">Videos</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="channel-cta">
+            <h2>Check Out Some Pirate King Online Videos From Different Creators</h2>
+            <p>You Can Also Subscribe to our YouTube Channel For Pirate King Online content!</p>
+            <a href="https://www.youtube.com/@tomateman1" class="subscribe-btn" target="_blank">Subscribe Now</a>
+        </div>
+
+        <div class="video-section">
+            <!-- Video 1 - Replace with your actual video IDs -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/Rm9FHPFu8MQ" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>Opening Carrer Lots</h3>
+                    <p>Good way to test how lucky you are...or not</p>
+                </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/Rvd6WbEQOAU" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>Pirate King Online Spots For Leveling</h3>
+                    <p>Good Spots for Levels 72-80</p>
+                </div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/OsJdGfb6EJI" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>Black Dragon Kill Port Royal</h3>
+                    <p>Lets Slay that Dragon</p>
+                </div>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/GJmS1pduRpQ" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>Pirates Online - High level Crusader Guide</h3>
+                    <p>A guide for you to find your way of the Crusader</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Tomate Inc. All rights reserved.</p>
+        <p>Pirate King Online is a registered trademark of its respective owners.</p>
+    </footer>
+</body>
+</html>
