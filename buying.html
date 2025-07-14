@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Items We Buy | Tomate Store</title>
+    <style>
+        /* Reuse your existing header/nav styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ff6347;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid #8b0000;
+        }
+        nav {
+            background-color: #8b0000;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav li {
+            margin: 0 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        /* Wanted Items Styles */
+        .wanted-container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        .wanted-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .wanted-item {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 5px solid #b11e05;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .item-name {
+            color: #8b0000;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 0;
+        }
+        
+        .item-price {
+            background: #ff6347;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        
+        .item-details {
+            color: #666;
+            margin: 10px 0;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            background: #8b0000;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        .priority-high {
+            border-left: 5px solid #ff0000;
+        }
+        
+        .priority-medium {
+            border-left: 5px solid #ffa500;
+        }
+        
+        .section-title {
+            color: #8b0000;
+            border-bottom: 2px solid #ff6347;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Items We're Buying</h1>
+        <p>Sell your Pirate King Online items to Tomate Store</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="survey.html">Survey</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="guides.html">Guides</a></li>
+            <li><a href="comments.html">Comments</a></li>
+        </ul>
+    </nav>
+
+    <div class="wanted-container">
+        <h2 class="section-title">Currently Wanted Items || Still working on getting the gold for them</h2>
+        
+        <div class="wanted-list">
+            <!-- Item 1 -->
+            <div class="wanted-item priority-high">
+                <div class="item-header">
+                    <h3 class="item-name">High Lvl 2gen Str Pet or FoE</h3>
+                    <span class="item-price">To be negotiated</span>
+                </div>
+                <p class="item-details">
+                    Level 45+ only<br>
+                    Must have 3 standars Skills<br>
+                    <strong>High demand!</strong><br>
+                </p>
+                <div class="image" style="text-align: center;"><img src="fairyStr.png" alt="Fairy Str"></div>
+                <a href="contact.html" class="contact-btn">Contact to Sell</a>
+            </div>
+            
+            <!-- Item 2 -->
+            <div class="wanted-item">
+                <div class="item-header">
+                    <h3 class="item-name">DE agi</h3>
+                    <span class="item-price">A lot</span>
+                </div>
+                <p class="item-details">
+                    Clean or 110/2<br>
+                    No gems<br>   
+                </p>
+                <div class="image" style="text-align: center;"><img src="DeAgi.png" alt="DE agi"></div>
+               <a href="contact.html" class="contact-btn">Contact to Sell</a>
+            </div>
+            
+            <!-- Item 3 -->
+            <div class="wanted-item priority-medium">
+                <div class="item-header">
+                    <h3 class="item-name">DT Crusader</h3>
+                    <span class="item-price">Also a lot of gold</span>
+                </div>
+                <p class="item-details">
+                    Clean or 110/2<br>
+                    <strong>Must be Cheap!</strong><br>
+                    
+                </p>
+                <div class="image" style="text-align: center;"><img src="DT.png" alt="DT"></div>
+                <a href="contact.html" class="contact-btn">Contact to Sell</a>
+            </div>
+            
+            <!-- Item 4 -->
+            <div class="wanted-item">
+                <div class="item-header">
+                    <h3 class="item-name">RF claw</h3>
+                    <span class="item-price">No idea how much</span>
+                </div>
+                <p class="item-details">
+                    Clean or 110/2<br>
+                    Can be with lust gem on it<br>
+                    <strong>Looking for a cheap one</strong>
+                </p>
+                <div class="image" style="text-align: center;"><img src="RFclaw.png" alt="RF claw"></div>
+                <a href="contact.html" class="contact-btn">Contact to Sell</a>
+            </div>
+        </div>
+        
+        <div style="margin-top: 40px; background: #f9f9f9; padding: 20px; border-radius: 8px;">
+            <h2 class="section-title">How to Sell to Us</h2>
+            <ol>
+                <li>Check our wanted list above</li>
+                <li>Click "Contact to Sell" for your item</li>
+                <li>We'll respond within 24 hours or whenever we fell like it!</li>
+                <li>Meet in-game to complete the trade</li>
+            </ol>
+            <p style="font-style: italic; margin-top: 15px;">
+                Note: All trades are final. We pay via in-game gold only.
+            </p>
+        </div>
+    </div>
+
+    <footer style="background-color: #333; color: white; text-align: center; padding: 20px; margin-top: 50px;">
+        <p>&copy; 2025 Tomate Store. Pirate King Online is a registered trademark.</p>
+    </footer>
+</body>
+</html>
