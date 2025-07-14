@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments | Tomate Store</title>
+    <style>
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ff6347;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid #8b0000;
+        }
+        nav {
+            background-color: #8b0000;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav li {
+            margin: 0 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .hero {
+            background-image: url('https://via.placeholder.com/1200x400');
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .hero h2 {
+            font-size: 3em;
+            text-shadow: 2px 2px 5px #000;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .price {
+            color: #ff6347;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .btn {
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        html {
+    scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        #commentForm {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        #commentForm input, #commentForm textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        #commentForm textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        .btn {
+            background: #ff6347;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .comment {
+            background: #f9f9f9;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #8b0000;
+        }
+        .comment-author {
+            font-weight: bold;
+            color: #8b0000;
+        }
+        .comment-date {
+            font-size: 0.8em;
+            color: #666;
+        }
+        .comment-counter {
+            text-align: center;
+            margin: 20px 0;
+            color: #8b0000;
+            font-weight: bold;
+        }
+        .rating-form {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.stars {
+  font-size: 2rem;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.stars span {
+  color: #ccc;
+  transition: color 0.2s;
+  margin: 0 3px;
+}
+
+.stars span.active,
+.stars span:hover {
+  color: #ffc107;
+  text-shadow: 0 0 5px rgba(255, 193, 7, 0.5);
+}
+
+.star-rating {
+  color: #ffc107;
+  font-size: 1rem;
+  margin-left: 10px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tomate Store</h1>
+        <p>Your trusted source for Pirate King Online items</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#weapons">Weapons</a></li>
+            <li><a href="#armor">Armor</a></li>
+            <li><a href="#consumables">Consumables</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="survey.html">Survey</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="comments.html">Comments</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2 style="text-align: center;">Leave us a Comment</h2>
+      
+        <!-- Updated Comment Form -->
+        <form id="commentForm">
+          <input type="text" id="username" placeholder="Your Name" required>
+          <textarea id="commentText" placeholder="Your review..." required></textarea>
+          <input type="hidden" id="userRating" value="0">
+           <!-- Rating Form -->
+        <div class="rating-form">
+            <h3>Rate This Store</h3>
+            <div class="stars" id="ratingStars">
+              <span data-value="1">☆</span>
+              <span data-value="2">☆</span>
+              <span data-value="3">☆</span>
+              <span data-value="4">☆</span>
+              <span data-value="5">☆</span>
+            </div>
+            <p id="selectedRating">Selected: 0 stars</p>
+          </div>
+          <button type="submit" class="btn">Submit Review</button>
+        </form>
+        
+        
+      
+        <!-- Comments Container (now shows ratings) -->
+        <div id="commentsContainer"></div>
+      </div>
+    <div class="comment-counter">
+        Showing <span id="showingCount">0</span> of <span id="totalCount">0</span> comments | 
+        Page <span id="currentPage">1</span>
+      </div>
+      
+      <div id="commentsContainer"></div>
+      
+      <div class="pagination">
+        <button id="loadPrev" class="btn" disabled>Previous</button>
+        <button id="loadNext" class="btn">Next</button>
+      </div>
+      
+      <style>
+      .pagination {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+        justify-content: center;
+      }
+      </style>
+      
+      <script>
+      // Pagination logic
+      document.getElementById('loadNext').addEventListener('click', () => {
+  db.collection("comments")
+    .orderBy("timestamp", "desc")
+    .startAfter(lastVisible)
+    .limit(commentsPerPage)
+    .get()
+    .then((snapshot) => {
+      let newShown = parseInt(document.getElementById('showingCount').textContent);
+      
+      snapshot.forEach((doc) => {
+        lastVisible = doc;
+        displayComment(doc.data());
+        newShown++;
+      });
+      
+      document.getElementById('showingCount').textContent = 
+        Math.min(newShown, totalComments);
+    });
+});
+      document.getElementById('loadPrev').addEventListener('click', () => {
+        // You'd need to track the first visible comment too
+        // Advanced implementation required
+      });
+      </script>
+
+
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+    
+    <script>
+ // Wait for DOM to load
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize Firebase
+  const firebaseConfig = {
+    apiKey: "AIzaSyD5leSQ7iPEIwLFvAUd0NQXhTTd5HDdBzw",
+    authDomain: "tomate-store-comments.firebaseapp.com",
+    projectId: "tomate-store-comments",
+    storageBucket: "tomate-store-comments.appspot.com",
+    messagingSenderId: "521428150903",
+    appId: "1:521428150903:web:16ba2f72d114edfd2d7472"
+  };
+  
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  }
+  const db = firebase.firestore();
+
+  // DOM Elements
+  const elements = {
+    showingCount: document.getElementById('showingCount'),
+    totalCount: document.getElementById('totalCount'),
+    currentPage: document.getElementById('currentPage'),
+    commentsContainer: document.getElementById('commentsContainer'),
+    loadPrev: document.getElementById('loadPrev'),
+    loadNext: document.getElementById('loadNext'),
+    commentForm: document.getElementById('commentForm'),
+    ratingStars: document.getElementById('ratingStars'),
+    selectedRating: document.getElementById('selectedRating'),
+    userRating: document.getElementById('userRating')
+  };
+
+  // State Variables
+  const commentsPerPage = 10;
+  let lastVisible = null;
+  let firstVisible = null;
+  let currentPage = 1;
+  let totalComments = 0;
+  let loadedComments = 0;
+  let pageHistory = [];
+  let selectedRating = 0;
+
+  // Initialize Star Rating System
+  if (elements.ratingStars) {
+    elements.ratingStars.querySelectorAll('span').forEach(star => {
+      star.addEventListener('click', () => {
+        selectedRating = parseInt(star.getAttribute('data-value'));
+        elements.userRating.value = selectedRating;
+        elements.selectedRating.textContent = `Selected: ${selectedRating} star${selectedRating !== 1 ? 's' : ''}`;
+        
+        // Update star display
+        elements.ratingStars.querySelectorAll('span').forEach((s, i) => {
+          s.textContent = i < selectedRating ? '★' : '☆';
+          s.classList.toggle('active', i < selectedRating);
+        });
+      });
+    });
+  }
+
+  // Display a Comment with Rating
+  function displayComment(comment) {
+    const date = comment.timestamp?.toDate()?.toLocaleString() || 'Just now';
+    const stars = '★'.repeat(comment.rating || 0) + '☆'.repeat(5 - (comment.rating || 0));
+    
+    elements.commentsContainer.insertAdjacentHTML('beforeend', `
+      <div class="comment">
+        <div>
+          <span class="comment-author">${comment.username}</span>
+          <span class="star-rating" title="${comment.rating || 0} stars">${stars}</span>
+          <span class="comment-date">${date}</span>
+        </div>
+        <p>${comment.text}</p>
+      </div>
+    `);
+  }
+
+  // Update Counters
+  function updateCounters() {
+    if (elements.showingCount) elements.showingCount.textContent = loadedComments;
+    if (elements.totalCount) elements.totalCount.textContent = totalComments;
+    if (elements.currentPage) elements.currentPage.textContent = currentPage;
+  }
+
+  // Update Button States
+  function updateButtonStates() {
+    if (elements.loadPrev) elements.loadPrev.disabled = (currentPage <= 1);
+    if (elements.loadNext) elements.loadNext.disabled = (loadedComments < commentsPerPage || loadedComments >= totalComments);
+  }
+
+  // Load Comments with Pagination
+  function loadComments(direction = 'first') {
+    let query = db.collection("comments").orderBy("timestamp", "desc");
+
+    // Pagination logic
+    if (direction === 'next' && lastVisible) {
+      pageHistory.push(firstVisible);
+      query = query.startAfter(lastVisible).limit(commentsPerPage);
+      currentPage++;
+    } else if (direction === 'prev' && pageHistory.length > 0) {
+      const prevFirstVisible = pageHistory.pop();
+      query = query.endBefore(prevFirstVisible).limitToLast(commentsPerPage);
+      currentPage--;
+    } else {
+      pageHistory = [];
+      query = query.limit(commentsPerPage);
+      currentPage = 1;
+    }
+
+    // Get total count
+    db.collection("comments").get().then((snap) => {
+      totalComments = snap.size;
+      updateCounters();
+    }).catch(console.error);
+
+    // Get paginated results
+    query.get().then((snapshot) => {
+      elements.commentsContainer.innerHTML = '';
+      loadedComments = snapshot.docs.length;
+      
+      if (snapshot.docs.length > 0) {
+        firstVisible = snapshot.docs[0];
+        lastVisible = snapshot.docs[snapshot.docs.length - 1];
+        
+        snapshot.forEach(doc => displayComment(doc.data()));
+      }
+
+      updateCounters();
+      updateButtonStates();
+    }).catch(console.error);
+  }
+
+  // Handle Comment Submission
+  if (elements.commentForm) {
+    elements.commentForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const username = elements.commentForm.querySelector('#username')?.value;
+      const commentText = elements.commentForm.querySelector('#commentText')?.value;
+      const rating = parseInt(elements.userRating?.value || 0);
+
+      if (username && commentText) {
+        db.collection("comments").add({
+          username: username,
+          text: commentText,
+          rating: rating,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        }).then(() => {
+          elements.commentForm.reset();
+          // Reset rating UI
+          if (elements.ratingStars) {
+            elements.ratingStars.querySelectorAll('span').forEach(s => {
+              s.textContent = '☆';
+              s.classList.remove('active');
+            });
+          }
+          if (elements.selectedRating) elements.selectedRating.textContent = 'Selected: 0 stars';
+          selectedRating = 0;
+          
+          loadComments('first');
+        }).catch(console.error);
+      }
+    });
+  }
+
+  // Initialize Pagination Buttons
+  if (elements.loadNext) elements.loadNext.addEventListener('click', () => loadComments('next'));
+  if (elements.loadPrev) elements.loadPrev.addEventListener('click', () => loadComments('prev'));
+
+  // Initial Load
+  loadComments();
+});
+    </script>
+</body>
+</html>
