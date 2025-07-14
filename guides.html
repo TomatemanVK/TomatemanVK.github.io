@@ -5,13 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Guides | Tomate Store</title>
     <style>
-        /* Reuse your existing styles */
+        /* Reuse your existing header/nav styles */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f0f8ff;
             color: #333;
             margin: 0;
             padding: 0;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        /* Guide Categories */
+        .category {
+            margin-bottom: 40px;
+        }
+        
+        .category-title {
+            color: #8b0000;
+            border-bottom: 2px solid #ff6347;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        
+        /* Guide Links List */
+        .guide-list {
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            gap: 10px;
+        }
+        
+        .guide-item {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        
+        .guide-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .guide-link {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .guide-link:hover {
+            text-decoration: underline;
+        }
+        
+        .guide-meta {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .new-badge {
+            background: #ff6347;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.7em;
+            margin-left: 10px;
         }
         header {
             background-color: #ff6347;
@@ -39,223 +105,110 @@
             text-decoration: none;
             font-weight: bold;
         }
-        .container {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-        
-        /* New Guide-Specific Styles */
-        .guides-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .guide-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        .guide-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        .guide-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 3px solid #ff6347;
-        }
-        .guide-content {
-            padding: 20px;
-        }
-        .guide-title {
-            color: #8b0000;
-            margin-top: 0;
-            font-size: 1.4em;
-        }
-        .guide-meta {
-            color: #666;
-            font-size: 0.9em;
-            margin: 10px 0;
-        }
-        .guide-excerpt {
-            margin: 15px 0;
-            line-height: 1.6;
-        }
-        .read-more {
-            display: inline-block;
-            background: #ff6347;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        .read-more:hover {
-            background: #e55337;
-        }
-        .guide-category {
-            display: inline-block;
-            background: #8b0000;
-            color: white;
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            margin-right: 10px;
-        }
-        .search-container {
-            margin: 30px 0;
-            text-align: center;
-        }
-        #guideSearch {
-            padding: 10px 15px;
-            width: 60%;
-            max-width: 500px;
-            border: 2px solid #ddd;
-            border-radius: 25px;
-            font-size: 1em;
-        }
-        @media (max-width: 768px) {
-            .guides-container {
-                grid-template-columns: 1fr;
-            }
-            #guideSearch {
-                width: 80%;
-            }
-        }
     </style>
 </head>
 <body>
+    <!-- Reuse your existing header/nav -->
     <header>
         <h1>Pirate King Online Guides</h1>
-        <p>Expert strategies and walkthroughs from the Tomate Crew</p>
+        <p>Curated collection of the best PKO guides</p>
     </header>
     
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="guides.html">Guides</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="survey.html">Survey</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="guides.html">Guides</a></li>
+            <li><a href="comments.html">Comments</a></li>
         </ul>
     </nav>
 
     <div class="container">
-        <div class="search-container">
-            <input type="text" id="guideSearch" placeholder="Search guides...">
+        <!-- Equipment Guides -->
+        <div class="category">
+            <h2 class="category-title">Equipment Guides</h2>
+            <ul class="guide-list">
+                <li class="guide-item">
+                    <a href="https://piratekings.online/threads/pko-equipment-guide-for-all-class-may-2024-ver.9150/" class="guide-link" target="_blank">
+                        Complete equipment guide for all classes (2024)
+                        
+                    </a>
+                    <div class="guide-meta">By Pooliver</div>
+                </li>
+                <li class="guide-item">
+                    <a href="https://piratekings.online/" class="guide-link" target="_blank">
+                        Still looking for another one
+                    
+                    </a>
+                    <div class="guide-meta">No one • Forever</div>
+                </li>
+            </ul>
         </div>
-
-        <div class="guides-container" id="guidesContainer">
-            <!-- Guide cards will be inserted here by JavaScript -->
+        
+        <!-- Clases Guides -->
+        <div class="category">
+            <h2 class="category-title">Classes guides</h2>
+            <ul class="guide-list">
+                <li class="guide-item">
+                    <a href="https://piratekings.online/threads/in-depth-voyager-guide-voyager-guide-to-rebirth-and-beyond-by-masterdrive.7074/" class="guide-link" target="_blank">
+                        In deph Voyager guide
+                        
+                    </a>
+                    <div class="guide-meta">By MasterDrive</div>
+                </li>
+                <li class="guide-item">
+                    <a href="https://piratekings.online/threads/champion-con-slasher-build.3515/" class="guide-link" target="_blank">
+                        Champion CON-slasher build
+                    </a>
+                    <div class="guide-meta">By kiwituatara</div>
+                </li>
+                <li class="guide-item">
+                    <a href="https://piratekings.online/threads/%E2%98%BA-crusader-guide-%E2%98%BA.66/" class="guide-link" target="_blank">
+                        Crusader Guide...Tomate Store advises using fewer points in base agi
+                    </a>
+                    <div class="guide-meta">By aduan</div>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Maps Guides -->
+        <div class="category">
+            <h2 class="category-title">Maps and Mazes guides</h2>
+            <ul class="guide-list">
+                <li class="guide-item">
+                    <a href="https://piratekings.online/threads/full-guide-of-dark-swamp.5499/" class="guide-link" target="_blank">
+                        Full guide of Dark Swamp(DS)
+                    </a>
+                    <div class="guide-meta">By lionaxd00</div>
+                </li>
+                <li class="guide-item">
+                    <a href="https://piratekings.online/guide/demonic-world-lv-50.3496/" class="guide-link" target="_blank">
+                        PKO Demonic World(DW) guide has useful maps
+                    </a>
+                    <div class="guide-meta">By PKO</div>
+                </li>
+                <li class="guide-item">
+                    <a href="https://www.youtube.com/watch?v=t7uIMH18GMw" class="guide-link" target="_blank">
+                        How to go to Skeletar Isle
+                    </a>
+                    <div class="guide-meta">By PKO</div>
+                </li>
+                <li class="guide-item">
+                    <a href="https://www.youtube.com/watch?v=fYRAjpnQjiI" class="guide-link" target="_blank">
+                        How to go to Naval Base
+                    </a>
+                    <div class="guide-meta">By PKO</div>
+                </li>
+            </ul>
         </div>
     </div>
 
     <footer style="background-color: #333; color: white; text-align: center; padding: 20px; margin-top: 50px;">
-        <p>&copy; 2023 Tomate Store. All rights reserved.</p>
+        <p>&copy; 2025 Tomate Store. All rights reserved.</p>
+        <p>Note: Guides linked are external community resources</p>
     </footer>
-
-    <script>
-        // Sample guide data - in a real site you'd fetch this from a database
-        const guides = [
-            {
-                id: 1,
-                title: "Beginner's Guide to Pirate King Online",
-                category: "Getting Started",
-                image: "https://via.placeholder.com/400x200?text=Beginner+Guide",
-                excerpt: "Learn the basics of combat, navigation and crew management in this comprehensive starter guide.",
-                date: "2023-10-15",
-                author: "Captain Tomate",
-                readTime: "8 min"
-            },
-            {
-                id: 2,
-                title: "Advanced Combat Techniques",
-                category: "Combat",
-                image: "https://via.placeholder.com/400x200?text=Combat+Guide",
-                excerpt: "Master parrying, combos and special moves to dominate in PvP battles.",
-                date: "2023-11-02",
-                author: "First Mate Sarah",
-                readTime: "12 min"
-            },
-            {
-                id: 3,
-                title: "Treasure Map Locations (Season 3)",
-                category: "Loot",
-                image: "https://via.placeholder.com/400x200?text=Treasure+Maps",
-                excerpt: "All hidden treasure locations updated for the latest season.",
-                date: "2023-11-20",
-                author: "Quartermaster Luis",
-                readTime: "5 min"
-            },
-            {
-                id: 4,
-                title: "Best Ship Upgrades for Gold",
-                category: "Ships",
-                image: "https://via.placeholder.com/400x200?text=Ship+Upgrades",
-                excerpt: "Priority upgrades that give you the most bang for your gold.",
-                date: "2023-09-28",
-                author: "Captain Tomate",
-                readTime: "10 min"
-            }
-        ];
-
-        // Display all guides
-        function displayGuides(guidesToShow) {
-            const container = document.getElementById('guidesContainer');
-            container.innerHTML = '';
-            
-            guidesToShow.forEach(guide => {
-                container.innerHTML += `
-                    <div class="guide-card">
-                        <img src="${guide.image}" alt="${guide.title}" class="guide-image">
-                        <div class="guide-content">
-                            <span class="guide-category">${guide.category}</span>
-                            <h3 class="guide-title">${guide.title}</h3>
-                            <div class="guide-meta">
-                                By ${guide.author} | ${guide.date} | ${guide.readTime} read
-                            </div>
-                            <p class="guide-excerpt">${guide.excerpt}</p>
-                            <a href="guide-detail.html?id=${guide.id}" class="read-more">Read Guide</a>
-                        </div>
-                    </div>
-                `;
-            });
-        }
-
-        // Search functionality
-        document.getElementById('guideSearch').addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase();
-            const filteredGuides = guides.filter(guide => 
-                guide.title.toLowerCase().includes(searchTerm) || 
-                guide.excerpt.toLowerCase().includes(searchTerm) ||
-                guide.category.toLowerCase().includes(searchTerm)
-            );
-            displayGuides(filteredGuides);
-        });
-
-        // Initial load
-        displayGuides(guides);
-
-        // In a real implementation, you would fetch from Firebase:
-        /*
-        function loadGuidesFromFirebase() {
-            db.collection("guides")
-                .orderBy("date", "desc")
-                .get()
-                .then((querySnapshot) => {
-                    const guides = [];
-                    querySnapshot.forEach((doc) => {
-                        guides.push(doc.data());
-                    });
-                    displayGuides(guides);
-                });
-        }
-        */
-    </script>
 </body>
 </html>
